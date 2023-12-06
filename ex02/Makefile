@@ -6,13 +6,14 @@
 #    By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/07 13:35:48 by mprofett          #+#    #+#              #
-#    Updated: 2023/12/05 10:36:07 by mprofett         ###   ########.fr        #
+#    Updated: 2023/12/05 16:10:00 by mprofett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= ./form_up_maggot
+NAME		= ./no_you_need_form_28B
 
-SRC			= main.cpp Bureaucrat.cpp Form.cpp
+SRC			= main.cpp Bureaucrat.cpp AForm.cpp ShrubberryCreationForm.cpp \
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ			= ${SRC:.cpp=.o}
 

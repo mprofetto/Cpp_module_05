@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:47:57 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 10:48:00 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:02:24 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,30 @@ void		Bureaucrat::demote(void)
 	std::cout << "Bureaucrat " << this->_name << " has been demoted to grade " << this->_grade << "." << std::endl;
 }
 
-void		Bureaucrat::signForm(Form &form)
+void		Bureaucrat::signForm(AForm &form)
 {
 	try
 	{
 		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
-	catch(const Form::GradeTooLowException& e)
+	catch(const AForm::GradeTooLowException& e)
 	{
 		std::cout << this->getName() << " couldn't sign " << form.getName() << " because ";
+		std::cerr << e.what() << '\n';
+	}
+}
+
+void		Bureaucrat::executeForm(AForm &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because ";
 		std::cerr << e.what() << '\n';
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:34:18 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/04 16:41:38 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:33:17 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <iostream>
 # include <stdexcept>
 # include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {

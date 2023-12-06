@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:47:57 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/04 15:34:09 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:39:20 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade cannot be smaller than 150");
+	return ("Grade Too High");
 }
 
 const char	*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade cannot be higher than 1");
+	return ("Grade Too Low");
 }
 
 Bureaucrat::Bureaucrat() : _name("random bureaucrat"), _grade(150)

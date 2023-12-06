@@ -6,11 +6,21 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:42:06 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/04 17:16:28 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:38:51 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+const char	*Form::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade Too High");
+}
+
+const char	*Form::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade Too Low");
+}
 
 Form::Form() : _name("random form"), _signed(0), _grade_to_sign(150), _grade_to_execute(150)
 {
@@ -70,15 +80,16 @@ int			Form::getGradeToExecute(void) const
 
 std::ostream	&operator<<(std::ostream &o, const Form &form)
 {
-	std::cout << "Form " << form.getName() << ":" << std::endl;
-	std::cout << "	Status: ";
+	o << "Form " << form.getName() << ":" << std::endl;
+	o << "	Status: ";
 	if (form.getSignature() == 1)
-		std::cout << "signed";
+		o << "signed";
 	else
-		std::cout << "not signed";
-	std::cout << std::endl;
-	std::cout << "Can be signed by a grade " << form.getGradeToSign() << " bureaucrat" << std::endl;
-	std::cout << "Can be executed by a grade " << form.getGradeToExecute() << " bureaucrat" << std::endl;
+		o << "not signed";
+	o << std::endl;
+	o << "Can be signed by a grade " << form.getGradeToSign() << " bureaucrat" << std::endl;
+	o << "Can be executed by a grade " << form.getGradeToExecute() << " bureaucrat" << std::endl;
+	return (o);
 }
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
