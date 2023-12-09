@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:42:06 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 10:38:51 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:05:53 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ const char	*Form::GradeTooHighException::what(void) const throw()
 const char	*Form::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade Too Low");
+}
+
+const char	*Form::AssignationForbidden::what(void) const throw()
+{
+	return ("Form cannot be modified in any way, they can be signed or executed. That's it.");
 }
 
 Form::Form() : _name("random form"), _signed(0), _grade_to_sign(150), _grade_to_execute(150)
@@ -39,6 +44,12 @@ Form::Form(const Form &copy) :
 	_grade_to_execute(copy.getGradeToExecute())
 {
 	std::cout << "Form " << this->_name << " created by copy" << std::endl;
+}
+
+Form	&Form::operator=(const Form &copy)
+{
+	throw AssignationForbidden();
+	(void)copy;
 }
 
 Form::Form(std::string name, bool signature, int grade_to_sign, int grade_to_execute) :

@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:15:41 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 17:00:05 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:13:38 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ Intern::Intern(const Intern &copy)
 	this->_known_forms[1] = copy.getKnownForm(1);
 	this->_known_forms[2] = copy.getKnownForm(2);
 	return;
+}
+
+Intern	&Intern::operator=(const Intern &copy)
+{
+	this->_known_forms[0] = copy.getKnownForm(0);
+	this->_known_forms[1] = copy.getKnownForm(1);
+	this->_known_forms[2] = copy.getKnownForm(2);
+	return (*this);
 }
 
 AForm	*Intern::makeform(std::string name, std::string target) const

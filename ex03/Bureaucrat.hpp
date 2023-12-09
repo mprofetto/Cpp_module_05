@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:34:18 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 14:03:10 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:36:16 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat(std::string name, int grade);
 
+		Bureaucrat	&operator=(const Bureaucrat &copy);
 		std::string	getName(void) const;
 		int			getGrade(void) const;
 		void		promote(void);

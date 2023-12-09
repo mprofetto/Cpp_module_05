@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:13:24 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 16:52:44 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:11:52 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ class Intern
 		~Intern();
 		Intern(const Intern &copy);
 
+		Intern		&operator=(const Intern &copy);
 		std::string	getKnownForm(int index) const;
-		AForm	*makeform(std::string name, std::string target) const;
+		AForm		*makeform(std::string name, std::string target) const;
 };
 
 #endif

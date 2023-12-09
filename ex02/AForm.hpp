@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:29:43 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 11:59:44 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:03:26 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,18 @@ class AForm
 				virtual const char *what() const throw();
 		};
 
+		class	AssignationForbidden : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
 		AForm();
 		~AForm();
 		AForm(const AForm &copy);
 		AForm(std::string name, bool signature, int grade_to_sign, int grade_to_execute);
 
+		AForm			&operator=(const AForm &copy);
 		std::string		getName(void) const;
 		bool			getSignature(void) const;
 		int				getGradeToSign(void) const;

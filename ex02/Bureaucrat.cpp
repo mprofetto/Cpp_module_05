@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:47:57 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 14:02:24 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:34:29 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())
 {
 	std::cout << "Bureaucrat \"" << this->_name << "\" has been created by copy. His grade is " << this->_grade << "." << std::endl;
+}
+
+Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy)
+{
+	this->_grade = copy.getGrade();
+	this->_name = copy.getName();
+	return (*this);
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)

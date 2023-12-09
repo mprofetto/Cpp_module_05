@@ -6,11 +6,11 @@
 #    By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/07 13:35:48 by mprofett          #+#    #+#              #
-#    Updated: 2023/12/05 16:15:58 by mprofett         ###   ########.fr        #
+#    Updated: 2023/12/06 10:38:15 by mprofett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= ./no_you_need_form_28B
+NAME		= ./internship
 
 SRC			= main.cpp Bureaucrat.cpp AForm.cpp ShrubberryCreationForm.cpp \
 			RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp

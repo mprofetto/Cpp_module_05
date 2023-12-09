@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:42:06 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 14:08:44 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:09:21 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ const char	*AForm::UnsignedFormException::what(void) const throw()
 	return ("Form has not been approved");
 }
 
+const char	*AForm::AssignationForbidden::what(void) const throw()
+{
+	return ("Form cannot be modified in any way, they can be signed or executed. That's it.");
+}
 
 AForm::AForm() : _name("random Form"), _signed(0), _grade_to_sign(150), _grade_to_execute(150)
 {
@@ -83,6 +87,12 @@ int			AForm::getGradeToSign(void) const
 int			AForm::getGradeToExecute(void) const
 {
 	return (this->_grade_to_execute);
+}
+
+AForm	&AForm::operator=(const AForm &copy)
+{
+	throw AssignationForbidden();
+	(void) copy;
 }
 
 std::ostream	&operator<<(std::ostream &o, const AForm &AForm)
