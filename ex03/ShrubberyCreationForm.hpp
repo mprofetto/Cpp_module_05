@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:26:02 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 13:15:49 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:40:59 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 
-		std::string	getTarget(void) const;
-		virtual void	execute(Bureaucrat &bureaucrat) const;
+		ShrubberyCreationForm	&operator=(const AForm &copy);
+		std::string				getTarget(void) const;
+		virtual void			execute(Bureaucrat &bureaucrat) const;
 };
 
 #endif

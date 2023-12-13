@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:48:38 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 14:49:17 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:39:28 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 
-		std::string	getTarget(void) const;
-		virtual void	execute(Bureaucrat &bureaucrat) const;
+		PresidentialPardonForm	&operator=(const AForm &copy);
+		std::string				getTarget(void) const;
+		virtual void			execute(Bureaucrat &bureaucrat) const;
 };
 
 #endif

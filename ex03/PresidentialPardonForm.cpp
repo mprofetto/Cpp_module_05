@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:49:25 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 14:52:23 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:39:58 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 	_target(copy.getTarget())
 {
 	;
+}
+
+PresidentialPardonForm	&PresidentialPardonForm::operator=(const AForm &copy)
+{
+	throw AForm::AssignationForbidden();
+	(void) copy;
 }
 
 std::string	PresidentialPardonForm::getTarget(void) const

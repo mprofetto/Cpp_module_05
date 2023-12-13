@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:23:28 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/05 16:07:59 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:40:23 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) :
 	_target(copy.getTarget())
 {
 	srand((unsigned int)time(NULL));
+}
+
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const AForm &copy)
+{
+	throw AForm::AssignationForbidden();
+	(void) copy;
 }
 
 std::string	RobotomyRequestForm::getTarget(void) const

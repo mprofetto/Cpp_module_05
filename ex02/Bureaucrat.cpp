@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:47:57 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/09 12:34:29 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:38:40 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade = grade;
-	std::cout << "Bureaucrat \"" << this->_name << "\" has been created by assignation. His grade is " << this->_grade << "." << std::endl;
+	std::cout << "Bureaucrat \"" << this->_name << "\" has been created. His grade is " << this->_grade << "." << std::endl;
 }
 
 std::string	Bureaucrat::getName(void) const

@@ -6,7 +6,7 @@
 /*   By: mprofett <mprofett@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:42:06 by mprofett          #+#    #+#             */
-/*   Updated: 2023/12/09 13:09:21 by mprofett         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:47:36 by mprofett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ AForm::AForm(std::string name, bool signature, int grade_to_sign, int grade_to_e
 		throw AForm::GradeTooLowException();
 	else if (grade_to_execute < 1)
 		throw AForm::GradeTooHighException();
-	std::cout << "Form " << this->getName() << " created by assignation" << std::endl;
+	std::cout << "Form " << this->getName() << " created" << std::endl;
 }
 
 AForm::~AForm()

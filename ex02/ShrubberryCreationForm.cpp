@@ -36,6 +36,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) 
 	;
 }
 
+ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const AForm &copy)
+{
+	throw AForm::AssignationForbidden();
+	(void) copy;
+}
+
 std::string	ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
